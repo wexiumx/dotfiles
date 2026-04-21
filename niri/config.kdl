@@ -291,6 +291,8 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun" "-show-icons"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: wleave" { spawn "wleave"; }
+    Mod+E hotkey-overlay-title="Open file explorer: Nautilus" { spawn "nautilus"; }
+
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
