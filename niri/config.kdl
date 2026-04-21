@@ -10,8 +10,13 @@ input {
     }
 
     touchpad {
-        off
+      tap
+      natural-scroll
+      dwt
+      click-method "button-areas"
+      accel-profile "flat"
     }
+
 
     mouse {
         accel-profile "flat"
