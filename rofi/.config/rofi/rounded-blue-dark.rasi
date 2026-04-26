@@ -1,0 +1,10 @@
+* {
+    bg0:    #1E2030F2;
+    bg1:    #363A4F;
+    bg2:    #2D304480; 
+    bg3:    #8AADF4F2; 
+    fg0:    #CAD3F5;
+    fg1:    #FFFFFF;
+    fg2:    #A5ADCB;
+    fg3:    #494D64;
+}
