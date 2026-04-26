@@ -1,0 +1,13 @@
+git
+stow
+ghostty
+zsh
+neovim
+fastfetch
+waybar
+rofi
+zed
+ohmyposh
+Zoxide
+fzf
+
