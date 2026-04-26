@@ -10,4 +10,4 @@ zed
 ohmyposh
 Zoxide
 fzf
-
+awww
