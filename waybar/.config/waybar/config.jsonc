@@ -1,0 +1,139 @@
+{
+    "layer": "top",
+    "height": 40,
+    "modules-left": ["group/arch-island", "group/clock-island", "group/updates-island"],
+    "modules-center": ["group/hyprpicker-island", "niri/workspaces", "group/notif-island"],
+    "modules-right": ["group/weather-island", "group/audio-island", "group/network-island", "group/language-island"],
+
+
+
+    "group/arch-island": {
+        "orientation": "horizontal",
+        "modules": ["custom/arch"]
+    },
+    "group/clock-island": {
+        "orientation": "horizontal",
+        "modules": ["clock"]
+    },
+    "group/updates-island": {
+        "orientation": "horizontal",
+        "modules": ["custom/updates"]
+    },
+
+
+    "group/hyprpicker-island": {
+        "orientation": "horizontal",
+        "modules": ["custom/hyprpicker"]
+    },
+    "group/notif-island": {
+        "orientation": "horizontal",
+        "modules": ["custom/swaync"]
+    },
+
+
+
+    "group/weather-island": {
+        "orientation": "horizontal",
+        "modules": ["custom/weather"]
+    },
+    "group/audio-island": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio"]
+    },
+    "group/network-island": {
+        "orientation": "horizontal",
+        "modules": ["network"]
+    },
+    "group/language-island": {
+        "orientation": "horizontal",
+        "modules": ["niri/language"]
+    },
+
+    "custom/arch": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󰭽 ",
+            "updated": "✓"
+        },
+        "on-click": "ghostty -e zsh -c 'paru'",
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --no-zero-output"
+    },
+
+
+    "custom/hyprpicker": {
+        "format": "",
+        "toltip": false,
+        "on-click": "hyprpicker --autocopy --format hex"
+    },
+    "niri/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "HDMI-A-2": [1, 2, 3, 4, 5],
+            "HDMI-A-1": [1, 2, 3, 4, 5]
+        }
+    },
+    "custom/swaync": {
+        "format": "{icon}",
+        "format-icons": {
+            "none": "󰂚",
+            "notification": "󰂚",
+            "dnd-none": "󰂛",
+            "dnd-notification": "󰂛"
+        },
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": false
+    },
+
+
+
+
+    "custom/weather": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "python ~/.config/waybar/scripts/waybar-wttr.py",
+        "interval": 1800,
+        "on-click": "xdg-open https://wttr.in/Vilnius"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "<span rise='900'>\uf025</span>  {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "network": {
+        "interface": "enp9s0",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮",
+        "format-wifi": "{essid} ({signalStrength}%) {icon}",
+        "format-icons": ["󰤢", "󰤥", "󰤨"],
+        "tooltip-format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "niri/language": {
+        "format": " {}",
+        "format-en": "EN",
+        "format-lt": "LT",
+        "format-ru": "RU"
+    }
+}

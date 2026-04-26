@@ -1,0 +1,161 @@
+/* Catppuccin Macchiato */
+* {
+    font-family: "SF Pro Display", "Symbols Nerd Font", monospace; 
+    font-size: 15px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* ── Palette ─────────────────────────────────────────────── */
+/* base    #24273a  mantle  #1e2030  crust   #181926          */
+/* surface0 #363a4f surface1 #494d64  surface2 #5b6078        */
+/* overlay0 #6e738d overlay1 #8087a2  overlay2 #939ab7        */
+/* subtext0 #a5adcb subtext1 #b8c0e0  text    #cad3f5         */
+/* rosewater #f4dbd6 flamingo #f0c6c6 pink   #f5bde6         */
+/* mauve   #c6a0f6  red     #ed8796  maroon  #ee99a0         */
+/* peach   #f5a97f  yellow  #eed49f  green   #a6da95         */
+/* teal    #8bd5ca  sky     #91d7e3  sapphire #7dc4e4        */
+/* blue    #8aadf4  lavender #b7bdf8                         */
+
+/* ── Bar window ──────────────────────────────────────────── */
+window#waybar {
+    background: transparent;
+    color: #cad3f5;
+}
+
+/* ── All left/center/right containers: transparent ────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.modules-left  { margin-left:  10px; }
+.modules-right { margin-right: 10px; }
+
+/* ── Every group becomes its own island ───────────────────── */
+#arch-island,
+#clock-island,
+#updates-island,
+#notif-island,
+#weather-island,
+#audio-island,
+#network-island,
+#language-island,
+#hyprpicker-island {
+    background: #24273a;
+    border-radius: 24px;
+    margin: 6px 4px;
+    padding: 0 6px;
+}
+
+/* ── Workspaces center island ────────────────────────────── */
+#workspaces {
+    background: #24273a;
+    border-radius: 24px;
+    margin: 6px 4px;
+    padding: 0 4px;
+}
+
+/* ── Generic module spacing ──────────────────────────────── */
+#custom-arch,
+#clock,
+#custom-updates,
+#pulseaudio,
+#network,
+#language,
+#custom-weather,
+#custom-swaync,
+#custom-hyprpicker {
+    padding: 0 10px;
+    color: #cad3f5;
+}
+
+/* ── Per-module accent colors ────────────────────────────── */
+#custom-arch    { color: #8aadf4; font-size: 16px; padding-left: 12px; }
+#clock          { color: #c0e8f0; }
+#custom-updates { color: #a6da95; }
+#custom-updates.has-updates { color: #f5a97f; }
+#custom-weather { color: #eed49f; }
+#pulseaudio     { color: #91d7e3; }
+#pulseaudio.muted { color: #6e738d; }
+#network        { color: #a6da95; }
+#network.disconnected { color: #ed8796; }
+#network.wifi   { color: #8bd5ca; }
+#language       { color: #c6a0f6; padding: 0 12px 0 4px; }
+#custom-hyprpicker { color: #f5bde6; }
+
+/* ── Notification button ─────────────────────────────────── */
+#custom-swaync {
+    color: #cad3f5;
+}
+
+#custom-swaync.notification {
+    color: #91d7e3;
+}
+
+#custom-swaync.dnd-none,
+#custom-swaync.dnd-notification {
+    color: #ee99a0;
+}
+
+/* ── Workspaces buttons ──────────────────────────────────── */
+#workspaces button {
+    min-width: 24px;
+    min-height: 16px;
+    margin: 10px 3px;
+    padding: 0;
+    font-size: 0px;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    background: #2a2d3d;
+    color: transparent;
+}
+#workspaces button:hover {
+    background: #363a4f;
+    min-width: 44px;
+}
+#workspaces button:not(.empty):not(.active) {
+    background: #263350;
+    color: transparent;
+    min-width: 28px;
+    min-height: 16px;
+}
+#workspaces button.active {
+    background: linear-gradient(90deg, #6d9ff0 0%, #8aadf4 50%, #b7bdf8 100%);
+    color: #1e2030;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 72px;
+    /* ── Workspaces buttons ──────────────────────────────────── */
+    margin: 8px 3px;
+    border-radius: 16px;
+    box-shadow:
+        inset 0 -2px 0 #5b8ef5,
+        0 0 10px rgba(138, 173, 244, 0.35),
+        0 0 20px rgba(138, 173, 244, 0.15);
+}
+#workspaces button.urgent {
+    background: linear-gradient(90deg, #e57082 0%, #ed8796 100%);
+    color: #1e2030;
+    font-size: 11px;
+    min-width: 72px;
+    min-height: 22px;
+    margin: 8px 3px;
+    border-radius: 16px;
+    box-shadow: inset 0 -2px 0 #c9424f, 0 0 10px rgba(237, 135, 150, 0.3);
+}
+
+
+
+/* ── symbols align ──────────────────────────────────── */
+
+#language {
+    padding-left: 9px;
+}
+
