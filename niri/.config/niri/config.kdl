@@ -169,7 +169,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun" "-show-icons"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: wleave" { spawn "wleave"; }
+    Mod+M hotkey-overlay-title="Lock the Screen: wleave" { spawn "wleave"; }
     Mod+E hotkey-overlay-title="Open file explorer: Nautilus" { spawn "nautilus"; }
     Mod+T hotkey-overlay-title="Change wallpaper: Matuwall" { spawn "matuwall"; }
 
