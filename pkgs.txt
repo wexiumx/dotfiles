@@ -11,3 +11,6 @@ ohmyposh
 Zoxide
 fzf
 awww
+btop
+yazi 
+
