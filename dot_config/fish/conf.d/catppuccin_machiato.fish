@@ -1,0 +1,20 @@
+set fish_color_normal cad3f5
+set fish_color_command a6da95
+set fish_color_keyword c6a0f6
+set fish_color_quote eed49f
+set fish_color_redirection 8bd5ca
+set fish_color_end f0c6c6
+set fish_color_error ed8796
+set fish_color_param b8c0e0
+set fish_color_comment 6e738d
+set fish_color_selection --background=363a4f
+set fish_color_search_match --background=2d3149
+set fish_color_operator f5bde6
+set fish_color_escape ee99a0
+set fish_color_autosuggestion 5b6078
+set fish_color_cancel ed8796
+set fish_color_cwd a5adcb
+set fish_color_user 91d7e3
+set fish_color_host f0c6c6
+set fish_color_status ed8796
+set fish_color_valid_path cad3f5 --underline

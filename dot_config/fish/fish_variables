@@ -1,0 +1,27 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export SSH_AGENT_PID:\x1d
+SETUVAR --export SSH_AUTH_SOCK:\x1d
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_autosuggestion:5b6078
+SETUVAR fish_color_cancel:ed8796
+SETUVAR fish_color_command:a6da95
+SETUVAR fish_color_comment:6e738d
+SETUVAR fish_color_cwd:a5adcb
+SETUVAR fish_color_end:f0c6c6
+SETUVAR fish_color_error:ed8796
+SETUVAR fish_color_escape:ee99a0
+SETUVAR fish_color_host:f0c6c6
+SETUVAR fish_color_keyword:c6a0f6
+SETUVAR fish_color_normal:cad3f5
+SETUVAR fish_color_operator:f5bde6
+SETUVAR fish_color_param:b8c0e0
+SETUVAR fish_color_quote:eed49f
+SETUVAR fish_color_redirection:8bd5ca
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d2d3149
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d363a4f
+SETUVAR fish_color_status:ed8796
+SETUVAR fish_color_user:91d7e3
+SETUVAR fish_color_valid_path:cad3f5\x1e\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_user_paths:/home/wexiumx/\x2espicetify
