@@ -2,10 +2,14 @@
 
 This is my personal configuration and its only working on **archlinux**
 
-![Workspace_1](./.screenshots/workspace_1.png)
-![Workspace_2](./.screenshots/workspace_2.png)
-![Workspace_3](./.screenshots/workspace_3.png)
+<details>
+  <summary>screenshots</summary>
 
+  ![Workspace_1](./.screenshots/workspace_1.png)
+  ![Workspace_2](./.screenshots/workspace_2.png)
+  ![Workspace_3](./.screenshots/workspace_3.png)
+
+</details>
 
 ### Installation
 
