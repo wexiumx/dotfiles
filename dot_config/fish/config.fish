@@ -8,18 +8,17 @@ end
 # remove fish greeting message
 set fish_greeting
 
-# setting ssh
-if not set -q SSH_AUTH_SOCK
-    ssh-agent -c | source
-end
-
 # use starship at startup
-export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+function starship_transient_prompt_func
+    starship module character
+end
+starship init fish | source
+enable_transience
 
 # shell integrations
 fzf --fish | source
 zoxide init --cmd cd fish | source
 
 fish_add_path /home/pesaff/.spicetify
-
-fish_add_path /home/wexiumx/.spicetify
