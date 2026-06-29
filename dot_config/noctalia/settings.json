@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "default",
+        "density": "comfortable",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -21,11 +21,11 @@
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
-        "showCategories": true,
-        "showIconBackground": false,
+        "showCategories": false,
+        "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "ghostty -e",
-        "viewMode": "grid"
+        "viewMode": "list"
     },
     "audio": {
         "mprisBlacklist": [
