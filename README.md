@@ -2,6 +2,11 @@
 
 This is my personal configuration and its only working on **archlinux**
 
+![Workspace_1](./.screenshots/workspace_1.png)
+![Workspace_2](./.screenshots/workspace_2.png)
+![Workspace_3](./.screenshots/workspace_3.png)
+
+
 ### Installation
 
 > [!IMPORTANT]
@@ -13,3 +18,4 @@ chezmoi init https://codeberg.org/wexiumx/dotfiles
 chezmoi diff
 chezmoi apply
 ```
+
