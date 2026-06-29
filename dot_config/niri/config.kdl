@@ -89,9 +89,9 @@ layout {
 
 // Startup
 
-spawn-at-startup "waybar"
 spawn-at-startup "awww"
 spawn-at-startup "awww-daemon"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 hotkey-overlay {
     skip-at-startup
@@ -328,4 +328,7 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
 }
+
+
+include "./noctalia.kdl"
 
