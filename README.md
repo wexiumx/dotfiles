@@ -13,5 +13,3 @@ chezmoi init https://codeberg.org/wexiumx/dotfiles
 chezmoi diff
 chezmoi apply
 ```
-```
-```
