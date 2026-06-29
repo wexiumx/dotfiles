@@ -13,8 +13,8 @@ if not set -q SSH_AUTH_SOCK
     ssh-agent -c | source
 end
 
-# Use oh-my-posh
-oh-my-posh init fish -c ~/.config/ohmyposh/zen.toml | source
+# use starship at startup
+export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
 
 # shell integrations
 fzf --fish | source
