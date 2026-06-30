@@ -174,10 +174,6 @@
                     "wheelUpExec": "",
                     "wheelUpUpdateText": false,
                     "wheelUpdateText": false
-                },
-                {
-                    "iconColor": "none",
-                    "id": "WallpaperSelector"
                 }
             ],
             "right": [
@@ -634,10 +630,6 @@
             },
             {
                 "enabled": true,
-                "id": "zenBrowser"
-            },
-            {
-                "enabled": true,
                 "id": "telegram"
             },
             {
@@ -662,10 +654,6 @@
             },
             {
                 "enabled": true,
-                "id": "spicetify"
-            },
-            {
-                "enabled": true,
                 "id": "code"
             },
             {
@@ -683,6 +671,14 @@
             {
                 "enabled": true,
                 "id": "starship"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "spicetify"
             }
         ],
         "enableUserTheming": false
@@ -727,7 +723,9 @@
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [
-            "fade"
+            "wipe",
+            "stripes",
+            "disc"
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
