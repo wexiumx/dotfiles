@@ -35,8 +35,8 @@ personal_programs=(
   "qbittorrent"
 )
 
-read -p "Do you prefer yay or paru? (or press enter to choose yay by default): " aur_tool
-aur_tool=${aur_tool:-yay}
+read -p "Do you prefer yay or paru? (or press enter to choose paru by default): " aur_tool
+aur_tool=${aur_tool:-paru}
 
 for pkg in "${packages[@]}"; do
   echo "Installing: ${pkg}"

@@ -38,13 +38,13 @@ installParu() {
   fi
 }
 
-read -p "Do you prefer yay or paru? (or press enter to choose yay by default): " aur_tool
-aur_tool=${aur_tool:-yay}
+read -p "Do you prefer yay or paru? (or press enter to choose paru by default): " aur_tool
+aur_tool=${aur_tool:-paru}
 
-if [[ "${aur_tool}" == "yay" ]]; then
-  installYay
-elif [[ "${aur_tool}" == "paru" ]]; then
+if [[ "${aur_tool}" == "paru" ]]; then
   installParu
+elif [[ "${aur_tool}" == "yay" ]]; then
+  installYay
 else
   echo "Error, you have probably made a typo!"
 fi
