@@ -149,7 +149,7 @@
                     "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
-                    "leftClickExec": "ghostty -e zsh -c 'yay -Syu --noconfirm --answerdiff None --answerclean None'",
+                    "leftClickExec": "ghostty -e zsh -c 'paru -Syu'",
                     "leftClickUpdateText": false,
                     "maxTextLength": {
                         "horizontal": 10,
@@ -626,14 +626,6 @@
             },
             {
                 "enabled": true,
-                "id": "steam"
-            },
-            {
-                "enabled": true,
-                "id": "telegram"
-            },
-            {
-                "enabled": true,
                 "id": "qt"
             },
             {
@@ -654,15 +646,7 @@
             },
             {
                 "enabled": true,
-                "id": "code"
-            },
-            {
-                "enabled": true,
                 "id": "helix"
-            },
-            {
-                "enabled": true,
-                "id": "emacs"
             },
             {
                 "enabled": true,
