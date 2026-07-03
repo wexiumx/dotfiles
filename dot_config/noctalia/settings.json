@@ -665,7 +665,7 @@
                 "id": "spicetify"
             }
         ],
-        "enableUserTheming": false
+        "enableUserTheming": true
     },
     "ui": {
         "boxBorderEnabled": false,
