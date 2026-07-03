@@ -38,17 +38,36 @@ personal_programs=(
 read -p "Do you prefer yay or paru? (or press enter to choose paru by default): " aur_tool
 aur_tool=${aur_tool:-paru}
 
-for pkg in "${packages[@]}"; do
-  echo "Installing: ${pkg}"
-  sleep .1
-  "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
-  clear
-done
+if [[ "${aur_tool}" == "paru" ]]; then
+  for pkg in "${packages[@]}"; do
+    echo "Installing: ${pkg}"
+    sleep .1
+    "${aur_tool}" -S --needed "${pkg}"
+    clear
+  done
 
-for pkg in "${personal_programs[@]}"; do
-  echo "Installing: ${pkg}"
-  sleep .1
-  "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
-  clear
-done
+  for pkg in "${personal_programs[@]}"; do
+    echo "Installing: ${pkg}"
+    sleep .1
+    "${aur_tool}" -S --needed "${pkg}"
+    clear
+  done
+fi
+
+
+if [[ "${aur_tool}" == "yay" ]]; then
+  for pkg in "${packages[@]}"; do
+    echo "Installing: ${pkg}"
+    sleep .1
+    "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+    clear
+  done
+
+  for pkg in "${personal_programs[@]}"; do
+    echo "Installing: ${pkg}"
+    sleep .1
+    "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+    clear
+  done
+fi
 
