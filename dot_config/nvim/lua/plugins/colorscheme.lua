@@ -1,36 +1,15 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      flavour = "macchiato",
-      transparent_background = true,
-      integrations = {
-        native_lsp = { enabled = true },
-      },
-    },
+    "RRethy/base16-nvim",
+    lazy = false,
+    priority = 1000, -- load before other plugins
   },
+
+  -- tell LazyVim to use it as the default colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "base16-<scheme-name>", -- e.g. "base16-gruvbox-dark-hard"
     },
-  },
-  -- Clear terminal highlight groups after colorscheme loads
-  {
-    "catppuccin/nvim",
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "*",
-        callback = function()
-          vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-          vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
-          vim.api.nvim_set_hl(0, "TermNormal", { bg = "NONE" })
-          vim.api.nvim_set_hl(0, "TermNormalNC", { bg = "NONE" })
-        end,
-      })
-    end,
   },
 }
