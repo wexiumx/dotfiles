@@ -1,4 +1,5 @@
 abbr -a ls eza
+abbr -a sl eza
 abbr -a ll "eza -lh --git"
 abbr -a la "eza -a"
 abbr -a lla "eza -lha --git"
@@ -18,10 +19,10 @@ abbr -a ..... "cd ../../../../.."
 
 abbr -a py python
 
-abbr -a i "yay -S"
-abbr -a s "yay -Ss"
-abbr -a u "yay -Syu"
-abbr -a rem "yay -Rns"
+abbr -a i "paru -S"
+abbr -a s "paru -Ss"
+abbr -a u "paru -Syu"
+abbr -a rem "paru -Rns"
 
 abbr -a ga "git add"
 abbr -a gc "git commit -m"
