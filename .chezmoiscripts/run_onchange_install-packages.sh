@@ -23,6 +23,7 @@ packages=(
   "sddm-astronaut-theme"
   "apple-fonts"
   "nautilus"
+  "bibata-cursor-theme"
 )
 
 personal_programs=(
@@ -31,7 +32,7 @@ personal_programs=(
   "spicetify"
   "steam"
   "zed"
-  "zen-browser"
+  "zen-browser-bin"
   "qbittorrent"
 )
 
