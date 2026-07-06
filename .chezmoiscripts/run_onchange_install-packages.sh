@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-trap 'error_message "Script failed at line $LINENO"' ERR
 
 packages=(
   "bat"
