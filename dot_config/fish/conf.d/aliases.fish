@@ -6,6 +6,8 @@ abbr -a lla "eza -lha --git"
 abbr -a lst "eza --tree -L 99"
 abbr -a lsta "eza --tree -L 99 -a --ignore-glob='.git'"
 
+abbr -a h helix
+
 abbr -a lg lazygit
 abbr -a cat bat
 

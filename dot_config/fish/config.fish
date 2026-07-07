@@ -20,9 +20,9 @@ starship init fish | source
 enable_transience
 
 # Declarating default text editor
-set -Ux EDITOR nvim
+set -Ux EDITOR helix
 
-# shell integrations
+# shell ntegrations
 fzf --fish | source
 zoxide init --cmd cd fish | source
 
