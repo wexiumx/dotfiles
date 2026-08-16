@@ -26,4 +26,5 @@ set -Ux EDITOR helix
 fzf --fish | source
 zoxide init --cmd cd fish | source
 
+# Spicetify
 fish_add_path /home/pesaff/.spicetify

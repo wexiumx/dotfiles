@@ -8,6 +8,9 @@ abbr -a lsta "eza --tree -L 99 -a --ignore-glob='.git'"
 
 abbr -a h helix
 
+abbr -a zs zellij -l welcome
+abbr -a za zellij attach
+
 abbr -a lg lazygit
 abbr -a cat bat
 
