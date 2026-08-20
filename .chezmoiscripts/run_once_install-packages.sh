@@ -17,9 +17,7 @@ packages=(
   "zoxide"
   "fzf"
   "neovim"
-  "noctalia-shell"
-  "sddm-astronaut-theme"
-  "apple-fonts"
+  "noctalia"
   "nautilus"
   "bibata-cursor-theme"
 )
