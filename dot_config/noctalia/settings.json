@@ -31,13 +31,13 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "spotify",
-        "spectrumFrameRate": 144,
+        "spectrumFrameRate": 240,
         "spectrumMirrored": true,
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
-        "volumeOverdrive": false,
-        "volumeStep": 5
+        "volumeOverdrive": true,
+        "volumeStep": 10
     },
     "bar": {
         "autoHideDelay": 500,
@@ -537,7 +537,7 @@
         "notifyUpdates": true
     },
     "sessionMenu": {
-        "countdownDuration": 5000,
+        "countdownDuration": 20000,
         "enableCountdown": true,
         "largeButtonsLayout": "single-row",
         "largeButtonsStyle": true,
@@ -667,10 +667,6 @@
             },
             {
                 "enabled": true,
-                "id": "helix"
-            },
-            {
-                "enabled": true,
                 "id": "zathura"
             },
             {
@@ -684,6 +680,10 @@
             {
                 "enabled": true,
                 "id": "spicetify"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
             }
         ],
         "enableUserTheming": true

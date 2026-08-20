@@ -45,7 +45,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato",
+    "dark": "Noctalia Dark",
   },
   "title_bar": {
     "show_onboarding_banner": false,
