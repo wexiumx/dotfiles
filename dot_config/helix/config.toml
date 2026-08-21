@@ -1,4 +1,4 @@
-theme = "gruvbox_transparent"
+theme = "noctalia"
 
 [keys.insert]
 j = { k = "normal_mode" }
