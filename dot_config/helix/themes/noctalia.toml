@@ -11,15 +11,15 @@
 "constant.character" = "secondaryContainer"
 "constant.character.escape" = "tertiaryContainer"
 
-"string" = { fg = "tertiary", bg = "surfaceContainerHigh" }
-"string.regexp" = { fg = "tertiaryContainer", bg = "surfaceContainerHigh" }
-"string.special" = { fg = "tertiary", bg = "surfaceContainerHigh" }
-"string.special.symbol" = { fg = "tertiary", bg = "surfaceContainerHigh" }
+"string" = { fg = "tertiary"}
+"string.regexp" = { fg = "tertiaryContainer" }
+"string.special" = { fg = "tertiary" }
+"string.special.symbol" = { fg = "tertiary" }
 "string.special.path" = { fg = "secondary", underline = { color = "secondary", style = "line" } }
 
 "path" = { fg = "secondary", underline = { color = "secondary", style = "line" } }
 
-"comment" = { fg = "outline", bg = "surfaceContainerHigh", modifiers = ["italic"] }
+"comment" = { fg = "outline", modifiers = ["italic"] }
 
 "variable" = "onSurface"
 "variable.builtin" = "secondary"
@@ -28,8 +28,7 @@
 
 "label" = "secondary"
 
-"punctuation" = "outlineVariant"
-"punctuation.special" = "outline"
+"punctuation" = "outline"
 
 "keyword" = { fg = "primary", modifiers = ["bold"] }
 "keyword.control.conditional" = { fg = "tertiary", modifiers = ["italic", "bold"] }
@@ -96,7 +95,7 @@
 "ui.menu" = { fg = "onSurface", bg = "surfaceContainer" }
 "ui.menu.selected" = { fg = "onPrimary", bg = "primary", modifiers = ["bold"] }
 
-"ui.selection" = { bg = "surfaceContainerHigh" }
+"ui.selection" = { bg = "primaryContainer", fg = "onPrimaryContainer" }
 
 "ui.highlight" = { bg = "primaryContainer", modifiers = ["bold"] }
 
@@ -124,8 +123,8 @@ plus = "#a6e3a1"
 delta = "#89b4fa"
 
 # Template colors
-primary = "#ffb959"
-surfaceTint = "#ffb959"
+primary = "#f6bc70"
+surfaceTint = "#f6bc70"
 onPrimary = "#462a00"
 primaryContainer = "#643f00"
 onPrimaryContainer = "#ffddb6"
@@ -145,18 +144,18 @@ onError = "#690005"
 errorContainer = "#93000a"
 onErrorContainer = "#ffdad6"
 
-background = "#17130e"
-onBackground = "#ebe1d9"
-surface = "#17130e"
-onSurface = "#ebe1d9"
+background = "#18120c"
+onBackground = "#ede0d4"
+surface = "#18120c"
+onSurface = "#ede0d4"
 surfaceVariant = "#4f4539"
 onSurfaceVariant = "#d3c4b4"
 
 outline = "#9c8e80"
 outlineVariant = "#4f4539"
 
-surfaceContainerLowest = "#110e09"
-surfaceContainerLow = "#1f1b16"
-surfaceContainer = "#231f1a"
-surfaceContainerHigh = "#2e2924"
-surfaceContainerHighest = "#39342f"
+surfaceContainerLowest = "#130d07"
+surfaceContainerLow = "#211b13"
+surfaceContainer = "#251f17"
+surfaceContainerHigh = "#302921"
+surfaceContainerHighest = "#3b342b"
