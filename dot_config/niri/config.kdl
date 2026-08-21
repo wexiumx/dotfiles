@@ -91,7 +91,7 @@ layout {
 
 spawn-at-startup "awww"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia"
 
 hotkey-overlay {
     skip-at-startup
@@ -172,12 +172,11 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Open App Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+M hotkey-overlay-title="Lock the Screen: Hyprlock" { spawn "hyprlock"; }
-    Mod+Shift+M hotkey-overlay-title="Session Menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Return hotkey-overlay-title="Open a terminal: Ghostty" { spawn "ghostty"; }
     Mod+E hotkey-overlay-title="Open file explorer: Nautilus" { spawn "nautilus"; }
-    Mod+T hotkey-overlay-title="Open Wallpaper Selector" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    Mod+D hotkey-overlay-title="Open app launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+T hotkey-overlay-title="Open wallpaper panel" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+Shift+M hotkey-overlay-title="Session menu" { spawn-sh "noctalia msg panel-toggle session"; }
 
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
@@ -329,5 +328,6 @@ binds {
 }
 
 
-include "./noctalia.kdl"
 
+
+include "noctalia.kdl"
