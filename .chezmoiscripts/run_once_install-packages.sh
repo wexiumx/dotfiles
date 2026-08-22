@@ -16,10 +16,11 @@ packages=(
   "starship"
   "zoxide"
   "fzf"
-  "neovim"
+  "helix"
   "noctalia"
   "nautilus"
   "bibata-cursor-theme"
+  "zellij"
 )
 
 personal_programs=(
