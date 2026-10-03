@@ -99,20 +99,9 @@ chezmoi diff
 
 Saved to `~/Pictures/Screenshots/`.
 
-### Media & hardware keys
-
-| Bind | Action |
-| --- | --- |
-| `XF86AudioRaiseVolume` / `XF86AudioLowerVolume` | Volume up / down (wpctl) |
-| `XF86AudioMute` | Toggle mute |
-| `XF86AudioMicMute` | Toggle mic mute |
-| `XF86AudioPlay` / `Stop` / `Prev` / `Next` | Media controls (playerctl) |
-| `XF86MonBrightnessUp` / `Down` | Brightness ±10% (brightnessctl) |
-
 ### Session
 
 | Bind | Action |
 | --- | --- |
 | `Mod+Shift+E` | Quit niri |
 | `Ctrl+Alt+Delete` | Quit niri |
-| `Mod+Escape` | Toggle keyboard shortcuts inhibit |
