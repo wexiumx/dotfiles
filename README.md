@@ -1,6 +1,6 @@
 # dotfiles
 
-My personal dotfiles for **Arch Linux** running **niri** (scrollable-tiling Wayland compositor) with **Neovim**, managed with [chezmoi](https://www.chezmoi.io/).
+My personal dotfiles for **Arch Linux** running **niri** (scrollable-tiling Wayland compositor), managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Requirements
 
