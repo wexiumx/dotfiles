@@ -3,9 +3,8 @@
 set -e
 trap 'error_message "Script failed at line $LINENO"' ERR
 
-installYay() {
+install_yay() {
   if command -v yay >/dev/null; then
-
     echo "yay is installed. Skipping installation"
   else
     echo "yay is not installed. Installing..."
@@ -21,7 +20,11 @@ installYay() {
   fi
 }
 
-installParu() {
+install_rust() {
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+install_paru() {
   if command -v paru >/dev/null; then
     echo "paru is installed. Skipping installation"
   else
@@ -42,9 +45,10 @@ read -p "Do you prefer yay or paru? (or press enter to skip): " aur_tool
 aur_tool=${aur_tool:-skip}
 
 if [[ "${aur_tool}" == "paru" ]]; then
-  installParu
+  install_rust
+  install_paru
 elif [[ "${aur_tool}" == "yay" ]]; then
-  installYay
+  install_yay
 elif [[ "${aur_tool}" == "skip" ]]; then
   echo "Skipping..."
 else
