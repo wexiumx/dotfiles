@@ -9,7 +9,6 @@ packages=(
   "lazygit"
   "yazi"
   "btop"
-  "stow"
   "fastfetch"
   "ghostty"
   "fish"
