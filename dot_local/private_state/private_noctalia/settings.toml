@@ -1,30 +1,68 @@
-config_version = 14
+config_version = 16
 
 [accessibility]
-ui_scale = 1.1000000089406967
+ui_scale = 1.2000000104308128
+
+[audio]
+enable_overdrive = true
+
+[backdrop]
+blur_intensity = 0.19999999552965164
+tint_intensity = 0.0
 
 [bar]
-order = [ "my_own_bar" ]
+order = [ "maximalism", "minimalism" ]
 
-    [bar.my_own_bar]
+    [bar.maximalism]
     background_opacity = 0.84999998100101948
     center = [ "wallhaven", "workspaces", "bar" ]
-    enabled = true
-    end = [ "battery", "tray", "keyboard_layout", "output_volume", "network", "bluetooth", "notifications" ]
+    end = [ "battery", "keyboard_layout", "output_volume", "bluetooth", "network", "notifications" ]
     font_family = "SF Pro"
     margin_ends = 0
     padding = 16
-    radius = 10
+    radius = 5
     start = [ "control-center", "date", "media", "widget" ]
     widget_spacing = 12
 
-        [bar.my_own_bar.dead_zone.actions]
+        [bar.maximalism.dead_zone.actions]
+        scroll_down = "brightness-down"
+        scroll_up = "brightness-up"
+
+    [bar.minimalism]
+    background_opacity = 0.87999998033046722
+    center = []
+    enabled = false
+    end = [ "output_volume", "date", "bluetooth", "network", "notifications" ]
+    margin_ends = 0
+    radius = 5
+    start = [ "control-center", "workspaces", "media" ]
+    widget_spacing = 10
+
+        [bar.minimalism.dead_zone.actions]
         scroll_down = "brightness-down"
         scroll_up = "brightness-up"
 
 [brightness]
 enable_ddcutil = true
 minimum_brightness = 0.19999999552965164
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "keyboard_layout"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "session"
 
 [desktop_widgets]
 schema_version = 2
@@ -47,6 +85,8 @@ widget_order = [
     cx = 1280.0
     cy = 1344.0
     output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
     rotation = 0.0
     type = "audio_visualizer"
 
@@ -62,6 +102,8 @@ widget_order = [
     cx = 2456.0
     cy = 116.0
     output = "HDMI-A-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
     rotation = 0.0
     type = "fancy_audio_visualizer"
 
@@ -74,6 +116,8 @@ widget_order = [
     cx = 1742.0
     cy = 145.39999389648438
     output = "HDMI-A-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "weather"
 
@@ -83,6 +127,8 @@ widget_order = [
     cx = 964.0
     cy = 976.0
     output = "HDMI-A-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "audio_visualizer"
 
@@ -98,6 +144,8 @@ widget_order = [
     cx = 960.0
     cy = 540.0
     output = "HDMI-A-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "fancy_audio_visualizer"
 
@@ -107,8 +155,9 @@ widget_order = [
 [dock]
 auto_hide = true
 enabled = true
-icon_size = 43
-position = "right"
+icon_size = 45
+magnification_scale = 1.3500000052154064
+radius = 8
 reserve_space = false
 
 [idle]
@@ -149,13 +198,13 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-2", 
     cx = 1280.0
     cy = 1258.0
     output = "HDMI-A-1"
-    placement_height = 0.0
-    placement_width = 0.0
+    placement_height = 1440.0
+    placement_width = 2560.0
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -176,13 +225,13 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-2", 
     cx = 960.0
     cy = 898.0
     output = "HDMI-A-2"
-    placement_height = 0.0
-    placement_width = 0.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -209,7 +258,7 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-2", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -226,8 +275,6 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-2", 
 
 [nightlight]
 enabled = true
-temperature_day = 10000
-temperature_night = 3800
 
 [notification]
 history_retention_hours = 48
@@ -242,26 +289,35 @@ enabled = [ "yuuto/arch-updater", "noctalia/wallhaven", "noctalia/timer" ]
 [shell]
 app_icon_color = "primary"
 app_icon_colorize = true
-avatar_path = "/home/wexiumx/Pictures/Avatar/101458283.jpg"
-corner_radius_scale = 1.5000000223517418
-font_family = "SF Pro"
-lang = "en"
-panel_anchor_bar = "my_own_bar"
+avatar_path = "/home/wexiumx/Pictures/Assets/avatar.jpg"
+corner_radius_scale = 0.7500000111758709
+font_family = "Inter"
+panel_anchor_bar = "maximalism"
+screen_time_enabled = true
 
     [shell.animation]
-    speed = 0.5000000074505806
+    speed = 1.2500000186264515
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    categories = false
+    fetch_exchange_rates = false
+    layout = "simple"
+    provider_prefix = ">"
 
     [shell.panel]
+    border_width = 0.0
     open_near_click_clipboard = true
     open_near_click_control_center = true
     session_placement = "floating"
     session_position = "center"
     transparency_mode = "soft"
-    wallpaper_position = "top_center"
 
     [shell.screen_corners]
     enabled = true
-    size = 20
+    size = 15
 
     [shell.screenshot]
     directory = "/home/wexiumx/Pictures/Screenshots"
@@ -301,15 +357,17 @@ panel_anchor_bar = "my_own_bar"
     shortcut = "5"
     variant = "destructive"
 
+    [shell.shadow]
+    alpha = 0.29999999329447746
+
 [theme]
 builtin = "Noctalia"
 community_palette = "Catppuccin Frappe Sapphire"
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "ghostty", "helix", "niri", "qt", "starship" ]
+    builtin_ids = [ "alacritty", "btop", "cava", "gtk3", "gtk4", "ghostty", "helix", "niri", "qt", "starship" ]
     community_ids = [
         "spicetify",
         "zen-browser",
@@ -322,6 +380,7 @@ wallpaper_scheme = "m3-tonal-spot"
         "zellij",
         "papirus-icons",
         "bat",
+        "fzf",
         "lazygit",
         "yazi"
     ]
@@ -331,23 +390,24 @@ directory = "/home/wexiumx/Pictures/Wallpapers"
 transition = [ "disc", "honeycomb", "stripes", "wipe" ]
 
     [wallpaper.default]
-    path = "/home/wexiumx/Pictures/Wallpapers/gruvbox_2.png"
+    path = "/home/wexiumx/Pictures/Wallpapers/wallhaven-zp2mlv.jpg"
 
     [wallpaper.last]
-    path = "/home/wexiumx/Pictures/Wallpapers/gruvbox_2.png"
+    path = "/home/wexiumx/Pictures/Wallpapers/wallhaven-zp2mlv.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/wexiumx/Pictures/Wallpapers/gruvbox_2.png"
+    path = "/home/wexiumx/Pictures/Wallpapers/wallhaven-zp2mlv.jpg"
 
     [wallpaper.monitors.HDMI-A-2]
-    path = "/home/wexiumx/Pictures/Wallpapers/gruvbox_2.png"
+    path = "/home/wexiumx/Pictures/Wallpapers/wallhaven-zp2mlv.jpg"
 
 [widget.bar]
 show_idle_on_horizontal = false
 type = "noctalia/timer:bar"
 
 [widget.control-center]
-glyph = "navigation-filled"
+custom_image = "/home/wexiumx/Pictures/Assets/arch-logo.svg"
+scale = 1.2000000000000002
 
 [widget.date]
 format = "{:%m-%d %A %R}"
@@ -358,9 +418,6 @@ album_art_only = true
 [widget.network]
 show_label = false
 show_vpn_label = true
-
-[widget.output_volume]
-show_label = false
 
 [widget.tray]
 capsule_radius = "auto"
