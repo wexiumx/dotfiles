@@ -51,7 +51,7 @@ output "ASUSTek COMPUTER INC VG279 LCLMQS050937" {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 26
 }
 
@@ -59,6 +59,7 @@ cursor {
 layout {
     gaps 14
     center-focused-column "never"
+    always-center-single-column
 
     preset-column-widths {
         proportion 0.33333
