@@ -20,6 +20,8 @@ packages=(
   "nautilus"
   "bibata-cursor-theme"
   "zellij"
+  "inter-font"
+  "gnome-keyring"
 )
 
 personal_programs=(
@@ -56,14 +58,14 @@ if [[ "${aur_tool}" == "yay" ]]; then
   for pkg in "${packages[@]}"; do
     echo "Installing: ${pkg}"
     sleep .1
-    "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+    "${aur_tool}" -S --needed "${pkg}"
     clear
   done
 
   for pkg in "${personal_programs[@]}"; do
     echo "Installing: ${pkg}"
     sleep .1
-    "${aur_tool}" -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+    "${aur_tool}" -S --needed "${pkg}"
     clear
   done
 fi
