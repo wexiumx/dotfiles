@@ -17,6 +17,7 @@ packages=(
   "fzf"
   "helix"
   "noctalia"
+  "noctalia-greeter"
   "nautilus"
   "bibata-cursor-theme"
   "zellij"
