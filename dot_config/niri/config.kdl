@@ -1,4 +1,8 @@
 input {
+    warp-mouse-to-focus
+
+    focus-follows-mouse max-scroll-amount="33%"
+
 
     keyboard {
         xkb {
@@ -24,31 +28,37 @@ input {
     }
 
     trackpoint {
+        natural-scroll
+
         accel-profile "adaptive"
         accel-speed -0.5
     }
-
-    warp-mouse-to-focus
-    focus-follows-mouse
     workspace-auto-back-and-forth
     mod-key "Super"
     mod-key-nested "Alt"
 }
 
-output "PNP(AOC) CQ27G2S 1EKPBJA005233" {
-    mode "2560x1440@143.912"
-    scale 1
-    transform "normal"
-    position x=1920 y=0
-    focus-at-startup
+blur {
+    offset 2.0
+    passes 0
+    saturation 1.0
+    noise 0.0
 }
 
-output "ASUSTek COMPUTER INC VG279 LCLMQS050937" {
-    mode "1920x1080@143.999"
-    scale 1
+output "HDMI-A-1" {
+    mode "2560x1440@143.912"
+    scale 1.0
     transform "normal"
-    position x=0 y=300
+    position x=1963 y=0
 }
+
+output "HDMI-A-2" {
+    mode "1920x1080@143.999"
+    scale 1.0
+    transform "normal"
+    position x=43 y=358
+}
+
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
@@ -104,19 +114,18 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-
     workspace-switch {
         spring damping-ratio=0.8 stiffness=2000 epsilon=0.0001
     }
 
     window-open {
         duration-ms 50
-        curve "ease-out-quad"
+        curve "cubic-bezier" 0.17 0.67 0.83 0.67
     }
 
     window-close {
         duration-ms 50
-        curve "ease-out-expo"
+        curve "cubic-bezier" 0.17 0.67 0.83 0.67
     }
 
     horizontal-view-movement {
@@ -124,11 +133,13 @@ animations {
     }
 
     window-movement {
-        spring damping-ratio=0.8 stiffness=2000 epsilon=0.0001
+         curve "cubic-bezier" 0.25 0.1 0.25 1.0 ;
+        duration-ms 100
     }
 
     window-resize {
-        spring damping-ratio=0.8 stiffness=2000 epsilon=0.0001
+         curve "cubic-bezier" 0.25 0.1 0.25 1.0 ;
+        duration-ms 100
     }
 
     config-notification-open-close {
@@ -154,8 +165,9 @@ animations {
 }
 
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    match app-id=r"^org\.wezfurlong\.wezterm$"
+    default-column-width {
+    }
 }
 
 window-rule {
@@ -163,13 +175,16 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r"firefox$" title="^Picture-in-Picture$"
     open-floating true
 }
 
 window-rule {
-    geometry-corner-radius 13
+    geometry-corner-radius 10
     clip-to-geometry true
+    background-effect {
+        blur true
+    }
 }
 
 binds {
@@ -179,6 +194,7 @@ binds {
     Mod+E hotkey-overlay-title="Open file explorer: Nautilus" { spawn "nautilus"; }
     Mod+D hotkey-overlay-title="Open app launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+T hotkey-overlay-title="Open wallpaper panel" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+X hotkey-overlay-title="Open clipboard" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Shift+M hotkey-overlay-title="Session menu" { spawn-sh "noctalia msg panel-toggle session"; }
 
 
@@ -187,12 +203,12 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     Mod+O repeat=false { toggle-overview; }
@@ -254,10 +270,10 @@ binds {
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
 
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
 
     Mod+WheelScrollRight      { focus-column-right; }
     Mod+WheelScrollLeft       { focus-column-left; }
