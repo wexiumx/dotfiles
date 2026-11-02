@@ -1,0 +1,8 @@
+[shell]
+polkit_agent = true
+
+[theme.templates.user.spicetify]
+input_path = "spicetify.ini"
+output_path = "$XDG_CONFIG_HOME/spicetify/Themes/Comfy/color.ini"
+post_hook = "spicetify -q apply --no-restart"
+
