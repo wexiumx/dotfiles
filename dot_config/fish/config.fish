@@ -1,8 +1,5 @@
-# avoid retyping passphrase for git
-if not set -q SSH_AUTH_SOCK
-    eval (ssh-agent -c)
-    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+if status is-interactive
+    keychain --eval --quiet id_ed25519 | source
 end
 
 # remove fish greeting message
@@ -27,4 +24,4 @@ fzf --fish | source
 zoxide init --cmd cd fish | source
 
 # Spicetify
-fish_add_path /home/pesaff/.spicetify
+fish_add_path /home/$HOME/.spicetify
